@@ -9,7 +9,7 @@ trigger:
       - branch
     exclude:
       - main
-#- none#main
+#- none#main 
 
 pool:
   vmImage: ubuntu-latest
