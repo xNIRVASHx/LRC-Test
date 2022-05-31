@@ -31,7 +31,9 @@ steps:
     tenantid: '111411822'
     projectid: '1'
     testid: '17'
-
+- task: Delay@1
+  inputs:
+    delayForMinutes: '3'
 
 # Delay
 # Delay further execution of a workflow by a fixed time
