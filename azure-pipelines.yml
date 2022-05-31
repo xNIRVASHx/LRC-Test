@@ -34,3 +34,13 @@ steps:
 
 - script: echo Run Id of the LRC run $(LRC.LRC_RUN_ID)
   displayName: 'Catch the run Id of the LRC run'
+
+# Delay
+# Delay further execution of a workflow by a fixed time
+jobs:
+- job: RunsOnServer
+  pool: Server
+  steps:
+  - task: Delay@1
+    inputs:
+      delayForMinutes: '5' 
