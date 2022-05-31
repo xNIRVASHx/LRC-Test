@@ -35,9 +35,6 @@ steps:
 
 # Delay
 # Delay further execution of a workflow by a fixed time
-- task: Delay@1
-  inputs:
-    delayForMinutes: '3'
 
 - script: echo Run Id of the LRC run $(LRC.LRC_RUN_ID)
   displayName: 'Catch the run Id of the LRC run'
