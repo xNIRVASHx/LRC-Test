@@ -33,7 +33,7 @@ steps:
     testid: '17'
 - task: Delay@1
   inputs:
-    delayForMinutes: '3'
+    delayForMinutes: '2'
 
 # Delay
 # Delay further execution of a workflow by a fixed time
