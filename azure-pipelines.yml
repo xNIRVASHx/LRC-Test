@@ -29,8 +29,9 @@ steps:
   inputs:
     serverEndpoint: 'LRC MP User Account'
     tenantid: '111411822'
-    projectid: '1/'
+    projectid: '1'
     testid: '17'
+
 
 # Delay
 # Delay further execution of a workflow by a fixed time
