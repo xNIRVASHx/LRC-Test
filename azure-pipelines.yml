@@ -12,8 +12,19 @@ trigger:
       - branch
 #- none#main 
 
-pool:
-  vmImage: ubuntu-latest
+# Delay
+# Delay further execution of a workflow by a fixed time
+jobs:
+- job: RunsOnServer
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - task: Delay@1
+    inputs:
+      delayForMinutes: '5'
+
+#pool:
+#  vmImage: ubuntu-latest
 
 steps:
 - script: echo Hello, world!
