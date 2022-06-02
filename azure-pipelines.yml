@@ -25,7 +25,7 @@ steps:
   displayName: 'Run a multi-line script'
 - task: Delay@1
   inputs:
-    delayForMinutes: '2'
+    delayForMinutes: '5'
 - task: srlTest@0
   name: LRC
   inputs:
