@@ -5,13 +5,7 @@
 # include is what will cause a test to run. changes will take affect in saves after yml is saved
 # Delay
 # Delay further execution of a workflow by a fixed time
-jobs:
-- job: RunsOnServer
-  pool: Server
-  steps:
-  - task: Delay@1
-    inputs:
-      delayForMinutes: '1'
+
 
 trigger:
   branches:
@@ -25,14 +19,14 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+#steps:
+#- script: echo Hello, world!
+#  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+#- script: |
+#    echo Add other tasks to build, test, and deploy your project.
+#    echo See https://aka.ms/yaml
+#  displayName: 'Run a multi-line script'
 
 - task: srlTest@0
   name: LRC
@@ -44,6 +38,13 @@ steps:
 
 # Delay
 # Delay further execution of a workflow by a fixed time
+jobs:
+- job: RunsOnServer
+  pool: vmImage: ubuntu-latest
+  steps:
+  - task: Delay@1
+    inputs:
+      delayForMinutes: '1'
 
 - script: echo Run Id of the LRC run $(LRC.LRC_RUN_ID)
   displayName: 'Catch the run Id of the LRC run'
