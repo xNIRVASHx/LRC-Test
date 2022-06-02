@@ -16,6 +16,7 @@ pool:
   vmImage: ubuntu-latest
   steps:
   - task: Delay@1
+    name: LRC
     inputs:
       delayForMinutes: '5' 
 steps:
