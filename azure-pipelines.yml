@@ -14,10 +14,7 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-  steps:
-  - task: Delay@1
-    inputs:
-      delayForMinutes: '5' 
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
