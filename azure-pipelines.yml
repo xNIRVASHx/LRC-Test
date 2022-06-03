@@ -6,7 +6,7 @@
 # Delay
 # Delay further execution of a workflow by a fixed time
 
-
+#Triggers a loadtest when the main or master branch is updated
 trigger:
   branches:
     include:
@@ -19,21 +19,25 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+#default script
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+#default script
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+#delays the script from running since it can takes several minutes to upload a new script to LoadRunner Cloud 
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
     script: 'Start-Sleep -Seconds 300'
   displayName: 'Delay Start - 300s'
 
+#Runs specified load test
 - task: srlTest@0
   name: LRC
   inputs:
@@ -42,9 +46,7 @@ steps:
     projectid: '1'
     testid: '17'
 
-# Delay
-# Delay further execution of a workflow by a fixed time
-
+#Reports run id for load test
 - script: echo Run Id of the LRC run $(LRC.LRC_RUN_ID)
   displayName: 'Catch the run Id of the LRC run'
 
